@@ -27,8 +27,6 @@ class DeclarationBlock extends RuleSet {
 	public function setSelectors($mSelector) {
 		if (is_array($mSelector)) {
 			$this->aSelectors = $mSelector;
-		} else {
-			$this->aSelectors = explode(',', $mSelector);
 		}
 		foreach ($this->aSelectors as $iKey => $mSelector) {
 			if (!($mSelector instanceof Selector)) {
