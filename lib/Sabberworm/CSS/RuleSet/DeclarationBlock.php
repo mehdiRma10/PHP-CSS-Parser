@@ -25,9 +25,11 @@ class DeclarationBlock extends RuleSet {
 	}
 
 	public function setSelectors($mSelector) {
+		
 		if (is_array($mSelector)) {
 			$this->aSelectors = $mSelector;
 		}
+
 		foreach ($this->aSelectors as $iKey => $mSelector) {
 			if (!($mSelector instanceof Selector)) {
 				$this->aSelectors[$iKey] = new Selector($mSelector);
