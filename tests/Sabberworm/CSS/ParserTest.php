@@ -1,14 +1,14 @@
 <?php
 
-namespace Mehdirma10\CSS;
+namespace Sabberworm\CSS;
 
-use Mehdirma10\CSS\CSSList\KeyFrame;
-use Mehdirma10\CSS\Value\Size;
-use Mehdirma10\CSS\Property\Selector;
-use Mehdirma10\CSS\RuleSet\DeclarationBlock;
-use Mehdirma10\CSS\Property\AtRule;
-use Mehdirma10\CSS\Value\URL;
-use Mehdirma10\CSS\Parsing\UnexpectedTokenException;
+use Sabberworm\CSS\CSSList\KeyFrame;
+use Sabberworm\CSS\Value\Size;
+use Sabberworm\CSS\Property\Selector;
+use Sabberworm\CSS\RuleSet\DeclarationBlock;
+use Sabberworm\CSS\Property\AtRule;
+use Sabberworm\CSS\Value\URL;
+use Sabberworm\CSS\Parsing\UnexpectedTokenException;
 
 class ParserTest extends \PHPUnit_Framework_TestCase {
 
@@ -220,7 +220,7 @@ body {color: green;}', $oDoc->render());
 		$this->assertSame('background-color', $aHeaderRules[1]->getRule());
 		$aHeaderRules = $oHeaderBlock->getRulesAssoc('background-');
 		$this->assertSame(1, count($aHeaderRules));
-		$this->assertSame(true, $aHeaderRules['background-color']->getValue() instanceof \Mehdirma10\CSS\Value\Color);
+		$this->assertSame(true, $aHeaderRules['background-color']->getValue() instanceof \Sabberworm\CSS\Value\Color);
 		$this->assertSame('rgba', $aHeaderRules['background-color']->getValue()->getColorDescription());
 		$oHeaderBlock->removeRule($aHeaderRules['background-color']);
 		$aHeaderRules = $oHeaderBlock->getRules('background-');
@@ -355,7 +355,7 @@ foo|test {gaga: 1;}
 	}
 	
 	/**
-	* @expectedException Mehdirma10\CSS\Parsing\OutputException
+	* @expectedException Sabberworm\CSS\Parsing\OutputException
 	*/
 	function testSelectorRemoval() {
 		$oDoc = $this->parsedStructureForFile('1readme');
@@ -419,14 +419,14 @@ body {background-url: url("http://somesite.com/images/someimage.gif");}';
 	}
 
 	/**
-	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
 	*/
 	function testCharsetFailure1() {
 		$this->parsedStructureForFile('-charset-after-rule', Settings::create()->withLenientParsing(false));
 	}
 
 	/**
-	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
 	*/
 	function testCharsetFailure2() {
 		$this->parsedStructureForFile('-charset-in-block', Settings::create()->withLenientParsing(false));
@@ -445,14 +445,14 @@ body {background-url: url("http://somesite.com/images/someimage.gif");}';
 		$oDoc = $this->parsedStructureForFile('line-numbers');
 		// array key is the expected line number
 		$aExpected = array(
-			1 => array('Mehdirma10\CSS\Property\Charset'),
-			3 => array('Mehdirma10\CSS\Property\CSSNamespace'),
-			5 => array('Mehdirma10\CSS\RuleSet\AtRuleSet'),
-			11 => array('Mehdirma10\CSS\RuleSet\DeclarationBlock'),
+			1 => array('Sabberworm\CSS\Property\Charset'),
+			3 => array('Sabberworm\CSS\Property\CSSNamespace'),
+			5 => array('Sabberworm\CSS\RuleSet\AtRuleSet'),
+			11 => array('Sabberworm\CSS\RuleSet\DeclarationBlock'),
 			// Line Numbers of the inner declaration blocks
-			17 => array('Mehdirma10\CSS\CSSList\KeyFrame', 18, 20),
-			23 => array('Mehdirma10\CSS\Property\Import'),
-			25 => array('Mehdirma10\CSS\RuleSet\DeclarationBlock')
+			17 => array('Sabberworm\CSS\CSSList\KeyFrame', 18, 20),
+			23 => array('Sabberworm\CSS\Property\Import'),
+			25 => array('Sabberworm\CSS\RuleSet\DeclarationBlock')
 		);
 
 		$aActual = array();
@@ -493,8 +493,8 @@ body {background-url: url("http://somesite.com/images/someimage.gif");}';
 	}
 
 	/**
-	 * @expectedException \Mehdirma10\CSS\Parsing\UnexpectedTokenException
-	 * Credit: This test by @Mehdirma10 (from https://github.com/Mehdirma10/PHP-CSS-Parser/pull/105#issuecomment-229643910 )
+	 * @expectedException \Sabberworm\CSS\Parsing\UnexpectedTokenException
+	 * Credit: This test by @sabberworm (from https://github.com/sabberworm/PHP-CSS-Parser/pull/105#issuecomment-229643910 )
 	 */
 	function testUnexpectedTokenExceptionLineNo() {
 		$oParser = new Parser("\ntest: 1;", Settings::create()->beStrict());
@@ -507,7 +507,7 @@ body {background-url: url("http://somesite.com/images/someimage.gif");}';
 	}
 
 	/**
-	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
 	*/
 	function testIeHacksStrictParsing() {
 		// We can't strictly parse IE hacks.
@@ -581,18 +581,5 @@ body {background-url: url("http://somesite.com/images/someimage.gif");}';
 		$comments = $contents[0]->getComments();
 		$this->assertCount(1, $comments);
 		$this->assertEquals("Find Me!", $comments[0]->getComment());
-	}
-
-	/**
-	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
-	*/
-	function testMicrosoftFilterStrictParsing() {
-		$oDoc = $this->parsedStructureForFile('ms-filter', Settings::create()->beStrict());
-	}
-
-	function testMicrosoftFilterParsing() {
-		$oDoc = $this->parsedStructureForFile('ms-filter');
-		$sExpected = ".test {filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#80000000\",endColorstr=\"#00000000\",GradientType=1);}";
-		$this->assertSame($sExpected, $oDoc->render());
 	}
 }

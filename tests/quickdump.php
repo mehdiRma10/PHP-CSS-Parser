@@ -4,7 +4,7 @@
 require_once(dirname(__FILE__).'/bootstrap.php');
 
 $sSource = file_get_contents('php://stdin');
-$oParser = new Mehdirma10\CSS\Parser($sSource);
+$oParser = new Sabberworm\CSS\Parser($sSource);
 
 $oDoc = $oParser->parse();
 echo "\n".'#### Input'."\n\n```css\n";

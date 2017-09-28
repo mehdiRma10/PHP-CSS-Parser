@@ -1,7 +1,7 @@
 PHP CSS Parser
 --------------
 
-[![build status](https://api.travis-ci.org/Mehdirma10/PHP-CSS-Parser.svg)](https://travis-ci.org/Mehdirma10/PHP-CSS-Parser) [![HHVM Status](http://hhvm.h4cc.de/badge/Mehdirma10/php-css-parser.svg)](http://hhvm.h4cc.de/package/Mehdirma10/php-css-parser)
+[![build status](https://api.travis-ci.org/sabberworm/PHP-CSS-Parser.svg)](https://travis-ci.org/sabberworm/PHP-CSS-Parser) [![HHVM Status](http://hhvm.h4cc.de/badge/sabberworm/php-css-parser.svg)](http://hhvm.h4cc.de/package/sabberworm/php-css-parser)
 
 A Parser for CSS Files written in PHP. Allows extraction of CSS files into a data structure, manipulation of said structure and output as (optimized) CSS.
 
@@ -14,7 +14,7 @@ Add php-css-parser to your composer.json
 ```json
 {
     "require": {
-        "Mehdirma10/php-css-parser": "*"
+        "sabberworm/php-css-parser": "*"
     }
 }
 ```
@@ -24,13 +24,13 @@ Add php-css-parser to your composer.json
 To use the CSS Parser, create a new instance. The constructor takes the following form:
 
 ```php
-new Mehdirma10\CSS\Parser($sText);
+new Sabberworm\CSS\Parser($sText);
 ```
 
 To read a file, for example, you’d do the following:
 
 ```php
-$oCssParser = new Mehdirma10\CSS\Parser(file_get_contents('somefile.css'));
+$oCssParser = new Sabberworm\CSS\Parser(file_get_contents('somefile.css'));
 $oCssDocument = $oCssParser->parse();
 ```
 
@@ -43,16 +43,16 @@ The resulting CSS document structure can be manipulated prior to being output.
 The charset option is used only if no @charset declaration is found in the CSS file. UTF-8 is the default, so you won’t have to create a settings object at all if you don’t intend to change that.
 
 ```php
-$oSettings = Mehdirma10\CSS\Settings::create()->withDefaultCharset('windows-1252');
-new Mehdirma10\CSS\Parser($sText, $oSettings);
+$oSettings = Sabberworm\CSS\Settings::create()->withDefaultCharset('windows-1252');
+new Sabberworm\CSS\Parser($sText, $oSettings);
 ```
 
 #### Strict parsing
 
-To have the parser choke on invalid rules, supply a thusly configured Mehdirma10\CSS\Settings object:
+To have the parser choke on invalid rules, supply a thusly configured Sabberworm\CSS\Settings object:
 
 ```php
-$oCssParser = new Mehdirma10\CSS\Parser(file_get_contents('somefile.css'), Mehdirma10\CSS\Settings::create()->beStrict());
+$oCssParser = new Sabberworm\CSS\Parser(file_get_contents('somefile.css'), Sabberworm\CSS\Settings::create()->beStrict());
 ```
 
 #### Disable multibyte functions
@@ -60,8 +60,8 @@ $oCssParser = new Mehdirma10\CSS\Parser(file_get_contents('somefile.css'), Mehdi
 To achieve faster parsing, you can choose to have PHP-CSS-Parser use regular string functions instead of `mb_*` functions. This should work fine in most cases, even for UTF-8 files, as all the multibyte characters are in string literals. Still it’s not recommended to use this with input you have no control over as it’s not thoroughly covered by test cases.
 
 ```php
-$oSettings = Mehdirma10\CSS\Settings::create()->withMultibyteSupport(false);
-new Mehdirma10\CSS\Parser($sText, $oSettings);
+$oSettings = Sabberworm\CSS\Settings::create()->withMultibyteSupport(false);
+new Sabberworm\CSS\Parser($sText, $oSettings);
 ```
 
 ### Manipulation
@@ -128,7 +128,7 @@ There are a few convenience methods on Document to ease finding, manipulating an
 
 ```php
 $sMyId = "#my_id";
-$oParser = new Mehdirma10\CSS\Parser($sText);
+$oParser = new Sabberworm\CSS\Parser($sText);
 $oCss = $oParser->parse();
 foreach($oCss->getAllDeclarationBlocks() as $oBlock) {
 	foreach($oBlock->getSelectors() as $oSelector) {
@@ -141,7 +141,7 @@ foreach($oCss->getAllDeclarationBlocks() as $oBlock) {
 ### Shrink all absolute sizes to half
 
 ```php
-$oParser = new Mehdirma10\CSS\Parser($sText);
+$oParser = new Sabberworm\CSS\Parser($sText);
 $oCss = $oParser->parse();
 foreach($oCss->getAllValues() as $mValue) {
 	if($mValue instanceof CSSSize && !$mValue->isRelative()) {
@@ -153,7 +153,7 @@ foreach($oCss->getAllValues() as $mValue) {
 ### Remove unwanted rules
 
 ```php
-$oParser = new Mehdirma10\CSS\Parser($sText);
+$oParser = new Sabberworm\CSS\Parser($sText);
 $oCss = $oParser->parse();
 foreach($oCss->getAllRuleSets() as $oRuleSet) {
 	$oRuleSet->removeRule('font-'); //Note that the added dash will make this remove all rules starting with font- (like font-size, font-weight, etc.) as well as a potential font-rule
@@ -166,26 +166,26 @@ foreach($oCss->getAllRuleSets() as $oRuleSet) {
 To output the entire CSS document into a variable, just use `->render()`:
 
 ```php
-$oCssParser = new Mehdirma10\CSS\Parser(file_get_contents('somefile.css'));
+$oCssParser = new Sabberworm\CSS\Parser(file_get_contents('somefile.css'));
 $oCssDocument = $oCssParser->parse();
 print $oCssDocument->render();
 ```
 
-If you want to format the output, pass an instance of type `Mehdirma10\CSS\OutputFormat`:
+If you want to format the output, pass an instance of type `Sabberworm\CSS\OutputFormat`:
 
 ```php
-$oFormat = Mehdirma10\CSS\OutputFormat::create()->indentWithSpaces(4)->setSpaceBetweenRules("\n");
+$oFormat = Sabberworm\CSS\OutputFormat::create()->indentWithSpaces(4)->setSpaceBetweenRules("\n");
 print $oCssDocument->render($oFormat);
 ```
 
 Or use one of the predefined formats:
 
 ```php
-print $oCssDocument->render(Mehdirma10\CSS\OutputFormat::createPretty());
-print $oCssDocument->render(Mehdirma10\CSS\OutputFormat::createCompact());
+print $oCssDocument->render(Sabberworm\CSS\OutputFormat::createPretty());
+print $oCssDocument->render(Sabberworm\CSS\OutputFormat::createCompact());
 ```
 
-To see what you can do with output formatting, look at the tests in `tests/Mehdirma10/CSS/OutputFormatTest.php`.
+To see what you can do with output formatting, look at the tests in `tests/Sabberworm/CSS/OutputFormatTest.php`.
 
 ## Examples
 
@@ -215,13 +215,13 @@ html, body {
 #### Structure (`var_dump()`)
 
 ```php
-class Mehdirma10\CSS\CSSList\Document#4 (2) {
+class Sabberworm\CSS\CSSList\Document#4 (2) {
   protected $aContents =>
   array(4) {
     [0] =>
-    class Mehdirma10\CSS\Property\Charset#6 (2) {
+    class Sabberworm\CSS\Property\Charset#6 (2) {
       private $sCharset =>
-      class Mehdirma10\CSS\Value\CSSString#5 (2) {
+      class Sabberworm\CSS\Value\CSSString#5 (2) {
         private $sString =>
         string(5) "utf-8"
         protected $iLineNo =>
@@ -231,7 +231,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
       int(1)
     }
     [1] =>
-    class Mehdirma10\CSS\RuleSet\AtRuleSet#7 (4) {
+    class Sabberworm\CSS\RuleSet\AtRuleSet#7 (4) {
       private $sType =>
       string(9) "font-face"
       private $sArgs =>
@@ -241,11 +241,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'font-family' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#8 (4) {
+          class Sabberworm\CSS\Rule\Rule#8 (4) {
             private $sRule =>
             string(11) "font-family"
             private $mValue =>
-            class Mehdirma10\CSS\Value\CSSString#9 (2) {
+            class Sabberworm\CSS\Value\CSSString#9 (2) {
               private $sString =>
               string(10) "CrassRoots"
               protected $iLineNo =>
@@ -260,13 +260,13 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'src' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#10 (4) {
+          class Sabberworm\CSS\Rule\Rule#10 (4) {
             private $sRule =>
             string(3) "src"
             private $mValue =>
-            class Mehdirma10\CSS\Value\URL#11 (2) {
+            class Sabberworm\CSS\Value\URL#11 (2) {
               private $oURL =>
-              class Mehdirma10\CSS\Value\CSSString#12 (2) {
+              class Sabberworm\CSS\Value\CSSString#12 (2) {
                 private $sString =>
                 string(15) "../media/cr.ttf"
                 protected $iLineNo =>
@@ -286,18 +286,18 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
       int(3)
     }
     [2] =>
-    class Mehdirma10\CSS\RuleSet\DeclarationBlock#13 (3) {
+    class Sabberworm\CSS\RuleSet\DeclarationBlock#13 (3) {
       private $aSelectors =>
       array(2) {
         [0] =>
-        class Mehdirma10\CSS\Property\Selector#14 (2) {
+        class Sabberworm\CSS\Property\Selector#14 (2) {
           private $sSelector =>
           string(4) "html"
           private $iSpecificity =>
           NULL
         }
         [1] =>
-        class Mehdirma10\CSS\Property\Selector#15 (2) {
+        class Sabberworm\CSS\Property\Selector#15 (2) {
           private $sSelector =>
           string(4) "body"
           private $iSpecificity =>
@@ -309,11 +309,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'font-size' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#16 (4) {
+          class Sabberworm\CSS\Rule\Rule#16 (4) {
             private $sRule =>
             string(9) "font-size"
             private $mValue =>
-            class Mehdirma10\CSS\Value\Size#17 (4) {
+            class Sabberworm\CSS\Value\Size#17 (4) {
               private $fSize =>
               double(1.6)
               private $sUnit =>
@@ -334,7 +334,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
       int(8)
     }
     [3] =>
-    class Mehdirma10\CSS\CSSList\KeyFrame#18 (4) {
+    class Sabberworm\CSS\CSSList\KeyFrame#18 (4) {
       private $vendorKeyFrame =>
       string(9) "keyframes"
       private $animationName =>
@@ -342,11 +342,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
       protected $aContents =>
       array(2) {
         [0] =>
-        class Mehdirma10\CSS\RuleSet\DeclarationBlock#19 (3) {
+        class Sabberworm\CSS\RuleSet\DeclarationBlock#19 (3) {
           private $aSelectors =>
           array(1) {
             [0] =>
-            class Mehdirma10\CSS\Property\Selector#20 (2) {
+            class Sabberworm\CSS\Property\Selector#20 (2) {
               private $sSelector =>
               string(4) "from"
               private $iSpecificity =>
@@ -358,11 +358,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
             'top' =>
             array(1) {
               [0] =>
-              class Mehdirma10\CSS\Rule\Rule#21 (4) {
+              class Sabberworm\CSS\Rule\Rule#21 (4) {
                 private $sRule =>
                 string(3) "top"
                 private $mValue =>
-                class Mehdirma10\CSS\Value\Size#22 (4) {
+                class Sabberworm\CSS\Value\Size#22 (4) {
                   private $fSize =>
                   double(0)
                   private $sUnit =>
@@ -383,11 +383,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
           int(13)
         }
         [1] =>
-        class Mehdirma10\CSS\RuleSet\DeclarationBlock#23 (3) {
+        class Sabberworm\CSS\RuleSet\DeclarationBlock#23 (3) {
           private $aSelectors =>
           array(1) {
             [0] =>
-            class Mehdirma10\CSS\Property\Selector#24 (2) {
+            class Sabberworm\CSS\Property\Selector#24 (2) {
               private $sSelector =>
               string(2) "to"
               private $iSpecificity =>
@@ -399,11 +399,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
             'top' =>
             array(1) {
               [0] =>
-              class Mehdirma10\CSS\Rule\Rule#25 (4) {
+              class Sabberworm\CSS\Rule\Rule#25 (4) {
                 private $sRule =>
                 string(3) "top"
                 private $mValue =>
-                class Mehdirma10\CSS\Value\Size#26 (4) {
+                class Sabberworm\CSS\Value\Size#26 (4) {
                   private $fSize =>
                   double(200)
                   private $sUnit =>
@@ -460,15 +460,15 @@ html, body {font-size: 1.6em;}
 #### Structure (`var_dump()`)
 
 ```php
-class Mehdirma10\CSS\CSSList\Document#4 (2) {
+class Sabberworm\CSS\CSSList\Document#4 (2) {
   protected $aContents =>
   array(1) {
     [0] =>
-    class Mehdirma10\CSS\RuleSet\DeclarationBlock#5 (3) {
+    class Sabberworm\CSS\RuleSet\DeclarationBlock#5 (3) {
       private $aSelectors =>
       array(1) {
         [0] =>
-        class Mehdirma10\CSS\Property\Selector#6 (2) {
+        class Sabberworm\CSS\Property\Selector#6 (2) {
           private $sSelector =>
           string(7) "#header"
           private $iSpecificity =>
@@ -480,15 +480,15 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'margin' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#7 (4) {
+          class Sabberworm\CSS\Rule\Rule#7 (4) {
             private $sRule =>
             string(6) "margin"
             private $mValue =>
-            class Mehdirma10\CSS\Value\RuleValueList#12 (3) {
+            class Sabberworm\CSS\Value\RuleValueList#12 (3) {
               protected $aComponents =>
               array(4) {
                 [0] =>
-                class Mehdirma10\CSS\Value\Size#8 (4) {
+                class Sabberworm\CSS\Value\Size#8 (4) {
                   private $fSize =>
                   double(10)
                   private $sUnit =>
@@ -499,7 +499,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
                   int(2)
                 }
                 [1] =>
-                class Mehdirma10\CSS\Value\Size#9 (4) {
+                class Sabberworm\CSS\Value\Size#9 (4) {
                   private $fSize =>
                   double(2)
                   private $sUnit =>
@@ -510,7 +510,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
                   int(2)
                 }
                 [2] =>
-                class Mehdirma10\CSS\Value\Size#10 (4) {
+                class Sabberworm\CSS\Value\Size#10 (4) {
                   private $fSize =>
                   double(1)
                   private $sUnit =>
@@ -521,7 +521,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
                   int(2)
                 }
                 [3] =>
-                class Mehdirma10\CSS\Value\Size#11 (4) {
+                class Sabberworm\CSS\Value\Size#11 (4) {
                   private $fSize =>
                   double(2)
                   private $sUnit =>
@@ -546,11 +546,11 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'font-family' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#13 (4) {
+          class Sabberworm\CSS\Rule\Rule#13 (4) {
             private $sRule =>
             string(11) "font-family"
             private $mValue =>
-            class Mehdirma10\CSS\Value\RuleValueList#15 (3) {
+            class Sabberworm\CSS\Value\RuleValueList#15 (3) {
               protected $aComponents =>
               array(4) {
                 [0] =>
@@ -558,7 +558,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
                 [1] =>
                 string(9) "Helvetica"
                 [2] =>
-                class Mehdirma10\CSS\Value\CSSString#14 (2) {
+                class Sabberworm\CSS\Value\CSSString#14 (2) {
                   private $sString =>
                   string(9) "Gill Sans"
                   protected $iLineNo =>
@@ -581,7 +581,7 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
         'color' =>
         array(1) {
           [0] =>
-          class Mehdirma10\CSS\Rule\Rule#16 (4) {
+          class Sabberworm\CSS\Rule\Rule#16 (4) {
             private $sRule =>
             string(5) "color"
             private $mValue =>
@@ -620,18 +620,18 @@ class Mehdirma10\CSS\CSSList\Document#4 (2) {
 * [nicolopignatelli](https://github.com/nicolopignatelli) for PSR-0 compatibility.
 * [diegoembarcadero](https://github.com/diegoembarcadero) for keyframe at-rule parsing.
 * [goetas](https://github.com/goetas) for @namespace at-rule support.
-* [View full list](https://github.com/Mehdirma10/PHP-CSS-Parser/contributors)
+* [View full list](https://github.com/sabberworm/PHP-CSS-Parser/contributors)
 
 ## Misc
 
 * Legacy Support: The latest pre-PSR-0 version of this project can be checked with the `0.9.0` tag.
-* Running Tests: To run all unit tests for this project, run `composer install` to install phpunit and use `./vendor/phpunit/phpunit/phpunit`.
+* Running Tests: To run all unit tests for this project, have `phpunit` installed and run `phpunit .`.
 
 ## License
 
 PHP-CSS-Parser is freely distributable under the terms of an MIT-style license.
 
-Copyright (c) 2011 Raphael Schweikert, http://Mehdirma10.com/
+Copyright (c) 2011 Raphael Schweikert, http://sabberworm.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

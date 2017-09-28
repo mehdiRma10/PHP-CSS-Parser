@@ -1,10 +1,10 @@
 <?php
 
-namespace Mehdirma10\CSS\RuleSet;
+namespace Sabberworm\CSS\RuleSet;
 
-use Mehdirma10\CSS\Parser;
-use Mehdirma10\CSS\Rule\Rule;
-use Mehdirma10\CSS\Value\Size;
+use Sabberworm\CSS\Parser;
+use Sabberworm\CSS\Rule\Rule;
+use Sabberworm\CSS\Value\Size;
 
 class DeclarationBlockTest extends \PHPUnit_Framework_TestCase {
 

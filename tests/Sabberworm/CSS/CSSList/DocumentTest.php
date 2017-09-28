@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS\CSSList;
+namespace Sabberworm\CSS\CSSList;
 
-use Mehdirma10\CSS\Parser;
+use Sabberworm\CSS\Parser;
 
 class DocumentTest extends \PHPUnit_Framework_TestCase {
 
