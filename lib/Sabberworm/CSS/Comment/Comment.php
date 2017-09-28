@@ -1,8 +1,8 @@
 <?php
 
-namespace Sabberworm\CSS\Comment;
+namespace Mehdirma10\CSS\Comment;
 
-use Sabberworm\CSS\Renderable;
+use Mehdirma10\CSS\Renderable;
 
 class Comment implements Renderable {
 	protected $iLineNo;
@@ -38,13 +38,13 @@ class Comment implements Renderable {
 	 * @return string
 	 */
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
 	/**
 	 * @return string
 	 */
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		return '/*' . $this->sComment . '*/';
 	}
 

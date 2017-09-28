@@ -9,7 +9,7 @@
 
 #### Backwards-incompatible changes
 
-* Unrecoverable parser errors throw an exception of type `Sabberworm\CSS\Parsing\SourceException` instead of `\Exception`.
+* Unrecoverable parser errors throw an exception of type `Mehdirma10\CSS\Parsing\SourceException` instead of `\Exception`.
 
 ### 8.1.0 (2016-07-19)
 
@@ -29,7 +29,7 @@
 
 #### Backwards-incompatible changes
 
-* The `Sabberworm\CSS\Value\String` class has been renamed to `Sabberworm\CSS\Value\CSSString`.
+* The `Mehdirma10\CSS\Value\String` class has been renamed to `Mehdirma10\CSS\Value\CSSString`.
 
 ### 7.0.1 (2015-12-25)
 
@@ -53,7 +53,7 @@
 
 ### 6.0.0 (2014-07-03)
 
-* Format output using Sabberworm\CSS\OutputFormat
+* Format output using Mehdirma10\CSS\OutputFormat
 * *No backwards-incompatible changes*
 
 #### Deprecations
@@ -76,7 +76,7 @@
 
 #### Backwards-incompatible changes
 
-* `Sabberworm\CSS\Value\Color`’s `__toString` method overrides `CSSList`’s to maybe return something other than `type(value, …)` (see above).
+* `Mehdirma10\CSS\Value\Color`’s `__toString` method overrides `CSSList`’s to maybe return something other than `type(value, …)` (see above).
 
 ### 5.0.1 (2013-03-20)
 
@@ -150,7 +150,7 @@
 ### 5.2.0 (2014-06-30)
 
 * Support removing a selector from a declaration block using `$oBlock->removeSelector($mSelector)`
-* Introduce a specialized exception (Sabberworm\CSS\Parsing\OuputException) for exceptions during output rendering
+* Introduce a specialized exception (Mehdirma10\CSS\Parsing\OuputException) for exceptions during output rendering
 
 * *No deprecations*
 
@@ -163,13 +163,13 @@
 ### 4.0.0 (2013-03-19)
 
 * Support for more @-rules
-* Generic interface `Sabberworm\CSS\Property\AtRule`, implemented by all @-rule classes
+* Generic interface `Mehdirma10\CSS\Property\AtRule`, implemented by all @-rule classes
 * *No deprecations*
 
 #### Backwards-incompatible changes
 
-* `Sabberworm\CSS\RuleSet\AtRule` renamed to `Sabberworm\CSS\RuleSet\AtRuleSet`
-* `Sabberworm\CSS\CSSList\MediaQuery` renamed to `Sabberworm\CSS\RuleSet\CSSList\AtRuleBlockList` with differing semantics and API (which also works for other block-list-based @-rules like `@supports`).
+* `Mehdirma10\CSS\RuleSet\AtRule` renamed to `Mehdirma10\CSS\RuleSet\AtRuleSet`
+* `Mehdirma10\CSS\CSSList\MediaQuery` renamed to `Mehdirma10\CSS\RuleSet\CSSList\AtRuleBlockList` with differing semantics and API (which also works for other block-list-based @-rules like `@supports`).
 
 ## 3.0
 
@@ -180,10 +180,10 @@
 
 #### Backwards-incompatible changes
 
-* All properties (like whether or not to use `mb_`-functions, which default charset to use and – new – whether or not to be forgiving when parsing) are now encapsulated in an instance of `Sabberworm\CSS\Settings` which can be passed as the second argument to `Sabberworm\CSS\Parser->__construct()`.
-* Specifying a charset as the second argument to `Sabberworm\CSS\Parser->__construct()` is no longer supported. Use `Sabberworm\CSS\Settings::create()->withDefaultCharset('some-charset')` instead.
-* Setting `Sabberworm\CSS\Parser->bUseMbFunctions` has no effect. Use `Sabberworm\CSS\Settings::create()->withMultibyteSupport(true/false)` instead.
-* `Sabberworm\CSS\Parser->parse()` may throw a `Sabberworm\CSS\Parsing\UnexpectedTokenException` when in strict parsing mode.
+* All properties (like whether or not to use `mb_`-functions, which default charset to use and – new – whether or not to be forgiving when parsing) are now encapsulated in an instance of `Mehdirma10\CSS\Settings` which can be passed as the second argument to `Mehdirma10\CSS\Parser->__construct()`.
+* Specifying a charset as the second argument to `Mehdirma10\CSS\Parser->__construct()` is no longer supported. Use `Mehdirma10\CSS\Settings::create()->withDefaultCharset('some-charset')` instead.
+* Setting `Mehdirma10\CSS\Parser->bUseMbFunctions` has no effect. Use `Mehdirma10\CSS\Settings::create()->withMultibyteSupport(true/false)` instead.
+* `Mehdirma10\CSS\Parser->parse()` may throw a `Mehdirma10\CSS\Parsing\UnexpectedTokenException` when in strict parsing mode.
 
 ## 2.0
 
@@ -193,8 +193,8 @@
 
 #### Backwards-incompatible changes
 
-* `Sabberworm\CSS\RuleSet->getRules()` returns an index-based array instead of an associative array. Use `Sabberworm\CSS\RuleSet->getRulesAssoc()` (which eliminates duplicate rules and lets the later rule of the same name win).
-* `Sabberworm\CSS\RuleSet->removeRule()` works as it did before except when passed an instance of `Sabberworm\CSS\Rule\Rule`, in which case it would only remove the exact rule given instead of all the rules of the same type. To get the old behaviour, use `Sabberworm\CSS\RuleSet->removeRule($oRule->getRule()`;
+* `Mehdirma10\CSS\RuleSet->getRules()` returns an index-based array instead of an associative array. Use `Mehdirma10\CSS\RuleSet->getRulesAssoc()` (which eliminates duplicate rules and lets the later rule of the same name win).
+* `Mehdirma10\CSS\RuleSet->removeRule()` works as it did before except when passed an instance of `Mehdirma10\CSS\Rule\Rule`, in which case it would only remove the exact rule given instead of all the rules of the same type. To get the old behaviour, use `Mehdirma10\CSS\RuleSet->removeRule($oRule->getRule()`;
 
 ## 1.0
 

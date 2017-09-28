@@ -1,9 +1,9 @@
 <?php
 
-namespace Sabberworm\CSS;
+namespace Mehdirma10\CSS;
 
-use Sabberworm\CSS\Parser;
-use Sabberworm\CSS\OutputFormat;
+use Mehdirma10\CSS\Parser;
+use Mehdirma10\CSS\OutputFormat;
 
 global $TEST_CSS;
 
@@ -147,7 +147,7 @@ background-color: #fff;
 	}
 	
 	/**
-	* @expectedException Sabberworm\CSS\Parsing\OutputException
+	* @expectedException Mehdirma10\CSS\Parsing\OutputException
 	*/
 	public function testIgnoreExceptionsOff() {
 		$aBlocks = $this->oDocument->getAllDeclarationBlocks();

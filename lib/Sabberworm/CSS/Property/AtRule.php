@@ -1,9 +1,9 @@
 <?php
 
-namespace Sabberworm\CSS\Property;
+namespace Mehdirma10\CSS\Property;
 
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\Comment\Commentable;
+use Mehdirma10\CSS\Renderable;
+use Mehdirma10\CSS\Comment\Commentable;
 
 interface AtRule extends Renderable, Commentable {
 	const BLOCK_RULES = 'media/document/supports/region-style/font-feature-values';

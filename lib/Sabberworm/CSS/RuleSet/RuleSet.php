@@ -1,10 +1,10 @@
 <?php
 
-namespace Sabberworm\CSS\RuleSet;
+namespace Mehdirma10\CSS\RuleSet;
 
-use Sabberworm\CSS\Rule\Rule;
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\Comment\Commentable;
+use Mehdirma10\CSS\Rule\Rule;
+use Mehdirma10\CSS\Renderable;
+use Mehdirma10\CSS\Comment\Commentable;
 
 /**
  * RuleSet is a generic superclass denoting rules. The typical example for rule sets are declaration block.
@@ -117,10 +117,10 @@ abstract class RuleSet implements Renderable, Commentable {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = '';
 		$bIsFirst = true;
 		foreach ($this->aRules as $aRules) {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace Mehdirma10\CSS\CSSList;
 
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
-use Sabberworm\CSS\RuleSet\RuleSet;
-use Sabberworm\CSS\Property\Selector;
-use Sabberworm\CSS\Comment\Commentable;
+use Mehdirma10\CSS\Renderable;
+use Mehdirma10\CSS\RuleSet\DeclarationBlock;
+use Mehdirma10\CSS\RuleSet\RuleSet;
+use Mehdirma10\CSS\Property\Selector;
+use Mehdirma10\CSS\Comment\Commentable;
 
 /**
  * A CSSList is the most generic container available. Its contents include RuleSet as well as other CSSList objects.
@@ -90,10 +90,10 @@ abstract class CSSList implements Renderable, Commentable {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = '';
 		$bIsFirst = true;
 		$oNextLevel = $oOutputFormat;

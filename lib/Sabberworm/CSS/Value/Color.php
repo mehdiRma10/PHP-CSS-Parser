@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabberworm\CSS\Value;
+namespace Mehdirma10\CSS\Value;
 
 class Color extends CSSFunction {
 
@@ -22,10 +22,10 @@ class Color extends CSSFunction {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		// Shorthand RGB color values
 		if($oOutputFormat->getRGBHashNotation() && implode('', array_keys($this->aComponents)) === 'rgb') {
 			$sResult = sprintf(

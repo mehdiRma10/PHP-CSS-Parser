@@ -1,8 +1,8 @@
 <?php
 
-namespace Sabberworm\CSS;
+namespace Mehdirma10\CSS;
 
-use Sabberworm\CSS\Rule\Rule;
+use Mehdirma10\CSS\Rule\Rule;
 
 /**
  * Parser settings class.

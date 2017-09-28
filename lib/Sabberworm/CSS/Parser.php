@@ -1,27 +1,27 @@
 <?php
 
-namespace Sabberworm\CSS;
+namespace Mehdirma10\CSS;
 
-use Sabberworm\CSS\CSSList\CSSList;
-use Sabberworm\CSS\CSSList\Document;
-use Sabberworm\CSS\CSSList\KeyFrame;
-use Sabberworm\CSS\Parsing\SourceException;
-use Sabberworm\CSS\Property\AtRule;
-use Sabberworm\CSS\Property\Import;
-use Sabberworm\CSS\Property\Charset;
-use Sabberworm\CSS\Property\CSSNamespace;
-use Sabberworm\CSS\RuleSet\AtRuleSet;
-use Sabberworm\CSS\CSSList\AtRuleBlockList;
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
-use Sabberworm\CSS\Value\CSSFunction;
-use Sabberworm\CSS\Value\RuleValueList;
-use Sabberworm\CSS\Value\Size;
-use Sabberworm\CSS\Value\Color;
-use Sabberworm\CSS\Value\URL;
-use Sabberworm\CSS\Value\CSSString;
-use Sabberworm\CSS\Rule\Rule;
-use Sabberworm\CSS\Parsing\UnexpectedTokenException;
-use Sabberworm\CSS\Comment\Comment;
+use Mehdirma10\CSS\CSSList\CSSList;
+use Mehdirma10\CSS\CSSList\Document;
+use Mehdirma10\CSS\CSSList\KeyFrame;
+use Mehdirma10\CSS\Parsing\SourceException;
+use Mehdirma10\CSS\Property\AtRule;
+use Mehdirma10\CSS\Property\Import;
+use Mehdirma10\CSS\Property\Charset;
+use Mehdirma10\CSS\Property\CSSNamespace;
+use Mehdirma10\CSS\RuleSet\AtRuleSet;
+use Mehdirma10\CSS\CSSList\AtRuleBlockList;
+use Mehdirma10\CSS\RuleSet\DeclarationBlock;
+use Mehdirma10\CSS\Value\CSSFunction;
+use Mehdirma10\CSS\Value\RuleValueList;
+use Mehdirma10\CSS\Value\Size;
+use Mehdirma10\CSS\Value\Color;
+use Mehdirma10\CSS\Value\URL;
+use Mehdirma10\CSS\Value\CSSString;
+use Mehdirma10\CSS\Rule\Rule;
+use Mehdirma10\CSS\Parsing\UnexpectedTokenException;
+use Mehdirma10\CSS\Comment\Comment;
 
 /**
  * Parser class parses CSS from text into a data structure.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabberworm\CSS\Value;
+namespace Mehdirma10\CSS\Value;
 
 
 class URL extends PrimitiveValue {
@@ -21,10 +21,10 @@ class URL extends PrimitiveValue {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		return "url({$this->oURL->render($oOutputFormat)})";
 	}
 

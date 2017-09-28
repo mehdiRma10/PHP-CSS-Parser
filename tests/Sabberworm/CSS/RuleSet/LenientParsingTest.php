@@ -1,14 +1,14 @@
 <?php
 
-namespace Sabberworm\CSS\RuleSet;
+namespace Mehdirma10\CSS\RuleSet;
 
-use Sabberworm\CSS\Parser;
-use Sabberworm\CSS\Settings;
+use Mehdirma10\CSS\Parser;
+use Mehdirma10\CSS\Settings;
 
 class LenientParsingTest extends \PHPUnit_Framework_TestCase {
 
 	/**
-	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
 	*/
 	public function testFaultToleranceOff() {
 		$sFile = dirname(__FILE__) . '/../../../files' . DIRECTORY_SEPARATOR . "-fault-tolerance.css";
@@ -24,7 +24,7 @@ class LenientParsingTest extends \PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
 	*/
 	public function testEndToken() {
 		$sFile = dirname(__FILE__) . '/../../../files' . DIRECTORY_SEPARATOR . "-end-token.css";
@@ -33,7 +33,7 @@ class LenientParsingTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	* @expectedException Sabberworm\CSS\Parsing\UnexpectedTokenException
+	* @expectedException Mehdirma10\CSS\Parsing\UnexpectedTokenException
 	*/
 	public function testEndToken2() {
 		$sFile = dirname(__FILE__) . '/../../../files' . DIRECTORY_SEPARATOR . "-end-token-2.css";

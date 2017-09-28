@@ -1,13 +1,13 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace Mehdirma10\CSS\CSSList;
 
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
-use Sabberworm\CSS\RuleSet\RuleSet;
-use Sabberworm\CSS\Property\Selector;
-use Sabberworm\CSS\Rule\Rule;
-use Sabberworm\CSS\Value\ValueList;
-use Sabberworm\CSS\Value\CSSFunction;
+use Mehdirma10\CSS\RuleSet\DeclarationBlock;
+use Mehdirma10\CSS\RuleSet\RuleSet;
+use Mehdirma10\CSS\Property\Selector;
+use Mehdirma10\CSS\Rule\Rule;
+use Mehdirma10\CSS\Value\ValueList;
+use Mehdirma10\CSS\Value\CSSFunction;
 
 /**
  * A CSSBlockList is a CSSList whose DeclarationBlocks are guaranteed to contain valid declaration blocks or at-rules.

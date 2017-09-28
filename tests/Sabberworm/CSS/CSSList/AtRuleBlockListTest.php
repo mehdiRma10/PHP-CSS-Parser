@@ -1,8 +1,8 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace Mehdirma10\CSS\CSSList;
 
-use Sabberworm\CSS\Parser;
+use Mehdirma10\CSS\Parser;
 
 class AtRuleBlockListTest extends \PHPUnit_Framework_TestCase {
 

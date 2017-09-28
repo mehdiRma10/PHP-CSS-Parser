@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabberworm\CSS\Parsing;
+namespace Mehdirma10\CSS\Parsing;
 
 /**
 * Thrown if the CSS parsers attempts to print something invalid

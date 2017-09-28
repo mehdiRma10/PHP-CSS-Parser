@@ -1,11 +1,11 @@
 <?php
 
-namespace Sabberworm\CSS\Rule;
+namespace Mehdirma10\CSS\Rule;
 
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\Value\RuleValueList;
-use Sabberworm\CSS\Value\Value;
-use Sabberworm\CSS\Comment\Commentable;
+use Mehdirma10\CSS\Renderable;
+use Mehdirma10\CSS\Value\RuleValueList;
+use Mehdirma10\CSS\Value\Value;
+use Mehdirma10\CSS\Comment\Commentable;
 
 /**
  * RuleSets contains Rule objects which always have a key and a value.
@@ -153,10 +153,10 @@ class Rule implements Renderable, Commentable {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = "{$this->sRule}:{$oOutputFormat->spaceAfterRuleName()}";
 		if ($this->mValue instanceof Value) { //Can also be a ValueList
 			$sResult .= $this->mValue->render($oOutputFormat);

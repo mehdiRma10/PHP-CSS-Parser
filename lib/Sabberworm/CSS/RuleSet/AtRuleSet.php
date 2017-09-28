@@ -1,8 +1,8 @@
 <?php
 
-namespace Sabberworm\CSS\RuleSet;
+namespace Mehdirma10\CSS\RuleSet;
 
-use Sabberworm\CSS\Property\AtRule;
+use Mehdirma10\CSS\Property\AtRule;
 
 /**
  * A RuleSet constructed by an unknown @-rule. @font-face rules are rendered into AtRuleSet objects.
@@ -27,10 +27,10 @@ class AtRuleSet extends RuleSet implements AtRule {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		$sArgs = $this->sArgs;
 		if($sArgs) {
 			$sArgs = ' ' . $sArgs;

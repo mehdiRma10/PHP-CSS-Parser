@@ -1,8 +1,8 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace Mehdirma10\CSS\CSSList;
 
-use Sabberworm\CSS\Property\AtRule;
+use Mehdirma10\CSS\Property\AtRule;
 
 /**
  * A BlockList constructed by an unknown @-rule. @media rules are rendered into AtRuleBlockList objects.
@@ -27,10 +27,10 @@ class AtRuleBlockList extends CSSBlockList implements AtRule {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		$sArgs = $this->sArgs;
 		if($sArgs) {
 			$sArgs = ' ' . $sArgs;

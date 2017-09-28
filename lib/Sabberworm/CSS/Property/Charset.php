@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabberworm\CSS\Property;
+namespace Mehdirma10\CSS\Property;
 
 /**
  * Class representing an @charset rule.
@@ -37,10 +37,10 @@ class Charset implements AtRule {
 	}
 
 	public function __toString() {
-		return $this->render(new \Sabberworm\CSS\OutputFormat());
+		return $this->render(new \Mehdirma10\CSS\OutputFormat());
 	}
 
-	public function render(\Sabberworm\CSS\OutputFormat $oOutputFormat) {
+	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
 		return "@charset {$this->sCharset->render($oOutputFormat)};";
 	}
 
