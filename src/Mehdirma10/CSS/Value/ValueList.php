@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
 abstract class ValueList extends Value {
 
@@ -37,10 +37,10 @@ abstract class ValueList extends Value {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		return $oOutputFormat->implode($oOutputFormat->spaceBeforeListArgumentSeparator($this->sSeparator) . $this->sSeparator . $oOutputFormat->spaceAfterListArgumentSeparator($this->sSeparator), $this->aComponents);
 	}
 

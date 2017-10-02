@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
 abstract class PrimitiveValue extends Value {
     public function __construct($iLineNo = 0) {

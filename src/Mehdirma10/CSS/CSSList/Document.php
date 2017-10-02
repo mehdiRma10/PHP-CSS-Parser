@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\CSSList;
+namespace MehdiRma10\CSS\CSSList;
 
 /**
  * The root CSSList of a parsed file. Contains all top-level css contents, mostly declaration blocks, but also any @-rules encountered.
@@ -91,9 +91,9 @@ class Document extends CSSBlockList {
 	}
 
 	// Override render() to make format argument optional
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat = null) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat = null) {
 		if($oOutputFormat === null) {
-			$oOutputFormat = new \Mehdirma10\CSS\OutputFormat();
+			$oOutputFormat = new \MehdiRma10\CSS\OutputFormat();
 		}
 		return parent::render($oOutputFormat);
 	}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Property;
+namespace MehdiRma10\CSS\Property;
 
 /**
 * CSSNamespace represents an @namespace rule.
@@ -26,10 +26,10 @@ class CSSNamespace implements AtRule {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		return '@namespace '.($this->sPrefix === null ? '' : $this->sPrefix.' ').$this->mUrl->render($oOutputFormat).';';
 	}
 	

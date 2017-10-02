@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
 class Color extends CSSFunction {
 
@@ -22,10 +22,10 @@ class Color extends CSSFunction {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		// Shorthand RGB color values
 		if($oOutputFormat->getRGBHashNotation() && implode('', array_keys($this->aComponents)) === 'rgb') {
 			$sResult = sprintf(

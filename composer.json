@@ -1,8 +1,8 @@
 {
-    "name": "mehdirma10/php-css-parser",
+    "name": "mehdi-rma10/php-css-parser",
     "autoload": {
         "psr-0" : {
-            "Mehdirma10\\CSS" : "src"
+            "MehdiRma10\\CSS" : "src"
         }
     }
 }

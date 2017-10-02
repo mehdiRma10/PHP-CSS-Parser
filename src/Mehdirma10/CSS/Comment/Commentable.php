@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Comment;
+namespace MehdiRma10\CSS\Comment;
 
 interface Commentable {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS\CSSList;
+namespace MehdiRma10\CSS\CSSList;
 
-use Mehdirma10\CSS\Property\AtRule;
+use MehdiRma10\CSS\Property\AtRule;
 
 class KeyFrame extends CSSList implements AtRule {
 
@@ -32,10 +32,10 @@ class KeyFrame extends CSSList implements AtRule {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = "@{$this->vendorKeyFrame} {$this->animationName}{$oOutputFormat->spaceBeforeOpeningBrace()}{";
 		$sResult .= parent::render($oOutputFormat);
 		$sResult .= '}';

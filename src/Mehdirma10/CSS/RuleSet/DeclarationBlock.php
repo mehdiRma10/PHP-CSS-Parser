@@ -1,15 +1,15 @@
 <?php
 
-namespace Mehdirma10\CSS\RuleSet;
+namespace MehdiRma10\CSS\RuleSet;
 
-use Mehdirma10\CSS\Property\Selector;
-use Mehdirma10\CSS\Rule\Rule;
-use Mehdirma10\CSS\Value\RuleValueList;
-use Mehdirma10\CSS\Value\Value;
-use Mehdirma10\CSS\Value\Size;
-use Mehdirma10\CSS\Value\Color;
-use Mehdirma10\CSS\Value\URL;
-use Mehdirma10\CSS\Parsing\OutputException;
+use MehdiRma10\CSS\Property\Selector;
+use MehdiRma10\CSS\Rule\Rule;
+use MehdiRma10\CSS\Value\RuleValueList;
+use MehdiRma10\CSS\Value\Value;
+use MehdiRma10\CSS\Value\Size;
+use MehdiRma10\CSS\Value\Color;
+use MehdiRma10\CSS\Value\URL;
+use MehdiRma10\CSS\Parsing\OutputException;
 
 /**
  * Declaration blocks are the parts of a css file which denote the rules belonging to a selector.
@@ -591,10 +591,10 @@ class DeclarationBlock extends RuleSet {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		if(count($this->aSelectors) === 0) {
 			// If all the selectors have been removed, this declaration block becomes invalid
 			throw new OutputException("Attempt to print declaration block with missing selector", $this->iLineNo);

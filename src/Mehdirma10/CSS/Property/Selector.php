@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Property;
+namespace MehdiRma10\CSS\Property;
 
 /**
  * Class representing a single CSS selector. Selectors have to be split by the comma prior to being passed into this class.

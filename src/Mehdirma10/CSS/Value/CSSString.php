@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
 class CSSString extends PrimitiveValue {
 
@@ -20,10 +20,10 @@ class CSSString extends PrimitiveValue {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		$sString = addslashes($this->sString);
 		$sString = str_replace("\n", '\A', $sString);
 		return $oOutputFormat->getStringQuotingType() . $sString . $oOutputFormat->getStringQuotingType();

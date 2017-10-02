@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS;
+namespace MehdiRma10\CSS;
 
-use Mehdirma10\CSS\Rule\Rule;
+use MehdiRma10\CSS\Rule\Rule;
 
 /**
  * Parser settings class.

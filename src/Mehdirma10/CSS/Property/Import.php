@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS\Property;
+namespace MehdiRma10\CSS\Property;
 
-use Mehdirma10\CSS\Value\URL;
+use MehdiRma10\CSS\Value\URL;
 
 /**
 * Class representing an @import rule.
@@ -36,10 +36,10 @@ class Import implements AtRule {
 	}
 	
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		return "@import ".$this->oLocation->render($oOutputFormat).($this->sMediaQuery === null ? '' : ' '.$this->sMediaQuery).';';
 	}
 

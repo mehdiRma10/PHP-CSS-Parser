@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS;
+namespace MehdiRma10\CSS;
 
-use Mehdirma10\CSS\Parsing\OutputException;
+use MehdiRma10\CSS\Parsing\OutputException;
 
 class OutputFormat {
 	/**
@@ -103,7 +103,7 @@ class OutputFormat {
 			return $this->set(substr($sMethodName, 3), $aArguments[0]);
 		} else if(strpos($sMethodName, 'get') === 0) {
 			return $this->get(substr($sMethodName, 3));
-		} else if(method_exists('\\Mehdirma10\\CSS\\OutputFormatter', $sMethodName)) {
+		} else if(method_exists('\\MehdiRma10\\CSS\\OutputFormatter', $sMethodName)) {
 			return call_user_func_array(array($this->getFormatter(), $sMethodName), $aArguments);
 		} else {
 			throw new \Exception('Unknown OutputFormat method called: '.$sMethodName);
@@ -256,7 +256,7 @@ class OutputFormatter {
 			} else {
 				$sResult .= $sSeparator;
 			}
-			if($mValue instanceof \Mehdirma10\CSS\Renderable) {
+			if($mValue instanceof \MehdiRma10\CSS\Renderable) {
 				$sResult .= $mValue->render($oFormat);
 			} else {
 				$sResult .= $mValue;

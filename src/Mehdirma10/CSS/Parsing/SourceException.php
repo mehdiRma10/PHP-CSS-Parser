@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Parsing;
+namespace MehdiRma10\CSS\Parsing;
 
 class SourceException extends \Exception {
 	private $iLineNo;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Mehdirma10\CSS\CSSList;
+namespace MehdiRma10\CSS\CSSList;
 
-use Mehdirma10\CSS\Renderable;
-use Mehdirma10\CSS\RuleSet\DeclarationBlock;
-use Mehdirma10\CSS\RuleSet\RuleSet;
-use Mehdirma10\CSS\Property\Selector;
-use Mehdirma10\CSS\Comment\Commentable;
+use MehdiRma10\CSS\Renderable;
+use MehdiRma10\CSS\RuleSet\DeclarationBlock;
+use MehdiRma10\CSS\RuleSet\RuleSet;
+use MehdiRma10\CSS\Property\Selector;
+use MehdiRma10\CSS\Comment\Commentable;
 
 /**
  * A CSSList is the most generic container available. Its contents include RuleSet as well as other CSSList objects.
@@ -90,10 +90,10 @@ abstract class CSSList implements Renderable, Commentable {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = '';
 		$bIsFirst = true;
 		$oNextLevel = $oOutputFormat;

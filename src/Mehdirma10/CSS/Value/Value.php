@@ -1,8 +1,8 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
-use Mehdirma10\CSS\Renderable;
+use MehdiRma10\CSS\Renderable;
 
 abstract class Value implements Renderable {
     protected $iLineNo;
@@ -20,5 +20,5 @@ abstract class Value implements Renderable {
 
     //Methods are commented out because re-declaring them here is a fatal error in PHP < 5.3.9
 	//public abstract function __toString();
-	//public abstract function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat);
+	//public abstract function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat);
 }

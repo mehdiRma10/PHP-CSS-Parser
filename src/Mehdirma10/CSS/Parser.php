@@ -1,27 +1,27 @@
 <?php
 
-namespace Mehdirma10\CSS;
+namespace MehdiRma10\CSS;
 
-use Mehdirma10\CSS\CSSList\CSSList;
-use Mehdirma10\CSS\CSSList\Document;
-use Mehdirma10\CSS\CSSList\KeyFrame;
-use Mehdirma10\CSS\Parsing\SourceException;
-use Mehdirma10\CSS\Property\AtRule;
-use Mehdirma10\CSS\Property\Import;
-use Mehdirma10\CSS\Property\Charset;
-use Mehdirma10\CSS\Property\CSSNamespace;
-use Mehdirma10\CSS\RuleSet\AtRuleSet;
-use Mehdirma10\CSS\CSSList\AtRuleBlockList;
-use Mehdirma10\CSS\RuleSet\DeclarationBlock;
-use Mehdirma10\CSS\Value\CSSFunction;
-use Mehdirma10\CSS\Value\RuleValueList;
-use Mehdirma10\CSS\Value\Size;
-use Mehdirma10\CSS\Value\Color;
-use Mehdirma10\CSS\Value\URL;
-use Mehdirma10\CSS\Value\CSSString;
-use Mehdirma10\CSS\Rule\Rule;
-use Mehdirma10\CSS\Parsing\UnexpectedTokenException;
-use Mehdirma10\CSS\Comment\Comment;
+use MehdiRma10\CSS\CSSList\CSSList;
+use MehdiRma10\CSS\CSSList\Document;
+use MehdiRma10\CSS\CSSList\KeyFrame;
+use MehdiRma10\CSS\Parsing\SourceException;
+use MehdiRma10\CSS\Property\AtRule;
+use MehdiRma10\CSS\Property\Import;
+use MehdiRma10\CSS\Property\Charset;
+use MehdiRma10\CSS\Property\CSSNamespace;
+use MehdiRma10\CSS\RuleSet\AtRuleSet;
+use MehdiRma10\CSS\CSSList\AtRuleBlockList;
+use MehdiRma10\CSS\RuleSet\DeclarationBlock;
+use MehdiRma10\CSS\Value\CSSFunction;
+use MehdiRma10\CSS\Value\RuleValueList;
+use MehdiRma10\CSS\Value\Size;
+use MehdiRma10\CSS\Value\Color;
+use MehdiRma10\CSS\Value\URL;
+use MehdiRma10\CSS\Value\CSSString;
+use MehdiRma10\CSS\Rule\Rule;
+use MehdiRma10\CSS\Parsing\UnexpectedTokenException;
+use MehdiRma10\CSS\Comment\Comment;
 
 /**
  * Parser class parses CSS from text into a data structure.

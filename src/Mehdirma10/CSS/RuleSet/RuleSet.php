@@ -1,10 +1,10 @@
 <?php
 
-namespace Mehdirma10\CSS\RuleSet;
+namespace MehdiRma10\CSS\RuleSet;
 
-use Mehdirma10\CSS\Rule\Rule;
-use Mehdirma10\CSS\Renderable;
-use Mehdirma10\CSS\Comment\Commentable;
+use MehdiRma10\CSS\Rule\Rule;
+use MehdiRma10\CSS\Renderable;
+use MehdiRma10\CSS\Comment\Commentable;
 
 /**
  * RuleSet is a generic superclass denoting rules. The typical example for rule sets are declaration block.
@@ -117,10 +117,10 @@ abstract class RuleSet implements Renderable, Commentable {
 	}
 
 	public function __toString() {
-		return $this->render(new \Mehdirma10\CSS\OutputFormat());
+		return $this->render(new \MehdiRma10\CSS\OutputFormat());
 	}
 
-	public function render(\Mehdirma10\CSS\OutputFormat $oOutputFormat) {
+	public function render(\MehdiRma10\CSS\OutputFormat $oOutputFormat) {
 		$sResult = '';
 		$bIsFirst = true;
 		foreach ($this->aRules as $aRules) {

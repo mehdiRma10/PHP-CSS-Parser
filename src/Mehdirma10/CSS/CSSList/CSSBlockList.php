@@ -1,13 +1,13 @@
 <?php
 
-namespace Mehdirma10\CSS\CSSList;
+namespace MehdiRma10\CSS\CSSList;
 
-use Mehdirma10\CSS\RuleSet\DeclarationBlock;
-use Mehdirma10\CSS\RuleSet\RuleSet;
-use Mehdirma10\CSS\Property\Selector;
-use Mehdirma10\CSS\Rule\Rule;
-use Mehdirma10\CSS\Value\ValueList;
-use Mehdirma10\CSS\Value\CSSFunction;
+use MehdiRma10\CSS\RuleSet\DeclarationBlock;
+use MehdiRma10\CSS\RuleSet\RuleSet;
+use MehdiRma10\CSS\Property\Selector;
+use MehdiRma10\CSS\Rule\Rule;
+use MehdiRma10\CSS\Value\ValueList;
+use MehdiRma10\CSS\Value\CSSFunction;
 
 /**
  * A CSSBlockList is a CSSList whose DeclarationBlocks are guaranteed to contain valid declaration blocks or at-rules.

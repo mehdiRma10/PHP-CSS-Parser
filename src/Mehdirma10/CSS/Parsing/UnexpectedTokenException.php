@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Parsing;
+namespace MehdiRma10\CSS\Parsing;
 
 /**
 * Thrown if the CSS parsers encounters a token it did not expect

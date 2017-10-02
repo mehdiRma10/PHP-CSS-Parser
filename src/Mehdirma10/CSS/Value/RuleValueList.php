@@ -1,6 +1,6 @@
 <?php
 
-namespace Mehdirma10\CSS\Value;
+namespace MehdiRma10\CSS\Value;
 
 class RuleValueList extends ValueList {
 	public function __construct($sSeparator = ',', $iLineNo = 0) {
