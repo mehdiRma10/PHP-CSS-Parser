@@ -15,6 +15,6 @@
         "phpunit/phpunit": "*"
     },
     "autoload": {
-        "psr-0": { "Sabberworm\\CSS": "src" }
+        "psr-0": { "Mehdirma10\\CSS": "src/" }
     }
 }
