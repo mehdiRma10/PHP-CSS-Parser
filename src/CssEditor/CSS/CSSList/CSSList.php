@@ -69,7 +69,7 @@ abstract class CSSList implements Renderable, Commentable {
 			$mSelector = $mSelector->getSelectors();
 		}
 		if (!is_array($mSelector)) {
-			$mSelector = explode(',', $mSelector);
+			$mSelector = [$mSelector];
 		}
 		foreach ($mSelector as $iKey => &$mSel) {
 			if (!($mSel instanceof Selector)) {
