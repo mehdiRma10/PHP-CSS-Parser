@@ -25,7 +25,7 @@ class DeclarationBlock extends RuleSet {
 	}
 
 	public function setSelectors($mSelector) {
-		die('ss');
+
 		if (is_array($mSelector)) {
 			$this->aSelectors = $mSelector;
 		}
