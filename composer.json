@@ -2,7 +2,7 @@
     "name": "mehdi-rma10/php-css-parser",
     "autoload": {
         "psr-0" : {
-            "MehdiRma10\\CSS" : "src"
+            "CssEditor\\CSS" : "src"
         }
     }
 }
