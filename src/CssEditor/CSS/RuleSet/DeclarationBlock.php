@@ -28,6 +28,8 @@ class DeclarationBlock extends RuleSet {
 
 		if (is_array($mSelector)) {
 			$this->aSelectors = $mSelector;
+		} else {
+			$this->aSelectors = [$mSelector];
 		}
 
 		foreach ($this->aSelectors as $iKey => $mSelector) {
