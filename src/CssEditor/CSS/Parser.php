@@ -415,7 +415,8 @@ class Parser {
 				array_splice($aStack, $iStartPosition - 1, $iLength * 2 - 1, array($oList));
 			}
 		}
-		return $aStack[0];
+		$aStack = isset($aStack[0]) ? $aStack[0] : null ;
+		return $aStack;
 	}
 
 	private static function listDelimiterForRule($sRule) {
